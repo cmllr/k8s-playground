@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-apache2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apache2
+  template:
+    metadata:
+      labels:
+        app: apache2
+    spec:
+      containers:
+      - name: hello-world-apache2-apache
+        image: apache2
+        ports:
+        - containerPort: 80
