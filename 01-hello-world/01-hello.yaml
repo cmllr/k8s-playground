@@ -1,30 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-example
+  name: demo-01
   labels:
-    app: demo-deployment-nginx
+    app: demo-01
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-deployment-nginx
+      app: demo-01
   template:
     metadata:
       labels:
-        app: demo-deployment-nginx
+        app: demo-01
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: demo-01
+        image: apache2
         ports:
         - containerPort: 80
-        readinessProbe:
-          tcpSocket:
-            port: 80
-        livenessProbe:
-          tcpSocket:
-            port: 80
         resources:
           requests:
             memory: "64Mi"
@@ -32,3 +26,18 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-01
+  labels:
+    app: demo-01
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30002
+  selector:
+    app: demo-01
+  type: NodePort
