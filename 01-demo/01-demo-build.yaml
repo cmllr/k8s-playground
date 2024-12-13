@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-03
+  name: demo-01
   labels:
-    app: demo-03
+    app: demo-01
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-03
+      app: demo-01
   template:
     metadata:
       labels:
-        app: demo-03
+        app: demo-01
     spec:
       containers:
-      - name: demo-03
+      - name: demo-01
         image: my-own-image:latest
         imagePullPolicy: Never
         ports:
@@ -32,14 +32,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-03
+  name: demo-01
   labels:
-    app: demo-03
+    app: demo-01
 spec:
   ports:
     - port: 80
       targetPort: 80
       nodePort: 30005
   selector:
-    app: demo-03
+    app: demo-01
   type: NodePort
