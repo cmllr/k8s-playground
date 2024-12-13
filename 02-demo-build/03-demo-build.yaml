@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: demo-03
-        image: test
+        image: my-own-image:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 80
