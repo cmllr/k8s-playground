@@ -39,7 +39,7 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30005
+      nodePort: 30010
   selector:
     app: demo-01
   type: NodePort

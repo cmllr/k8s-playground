@@ -7,3 +7,9 @@
 |kubectl delete –f xy.xaml|Löscht alle Objekte, die in xy.yaml definiert sind
 |kubectl delete deployment harald-schmidt|Löscht das Deployment „harald-schmidt“
 |kubectl get xy –o yaml|Liefert die YAML-Definition für xy
+
+
+
+# Kubectl 
+
+https://kubernetes.io/releases/download/#binaries
