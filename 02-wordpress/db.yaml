@@ -25,7 +25,8 @@ spec:
   storageClassName: hostpath
   volumeMode: Filesystem
   hostPath:
-    path: /Users/chm/Nextcloud/Master/SS_WS24/uebungen/04-wordpress/storage-db
+    path: /c/users/chm/k8s-playground/02-wordpress/db-storage  
+    #/mnt/c/Users/chm/k8s-playground/02-wordpress/db-storage
   claimRef:
     namespace: default
     name: mysql-pv-claim
@@ -83,10 +84,10 @@ spec:
           mountPath: /var/lib/mysql
         resources:
           requests:
-            memory: "64Mi"
+            memory: "512Mi"
             cpu: "250m"
           limits:
-            memory: "128Mi"
+            memory: "512Mi"
             cpu: "500m"
       volumes:
       - name: mysql-persistent-storage

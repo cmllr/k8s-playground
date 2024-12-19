@@ -18,3 +18,7 @@ https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-k
 https://kubernetes.io/releases/download/#binaries
 
 Linux/ Unix:  `chmod +x ./kubectl`
+
+`kubectl config use-context docker-desktop`
+
+`kubectl cluster-info`

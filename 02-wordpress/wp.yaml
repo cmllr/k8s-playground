@@ -27,7 +27,8 @@ spec:
   storageClassName: hostpath
   volumeMode: Filesystem
   hostPath:
-    path: /Users/chm/Nextcloud/Master/SS_WS24/uebungen/04-wordpress/storage-wp
+    # Windows: Nur für Demozwecke, abhängig von Docker Backend (WSL vs. Hyper-V) 
+    path: /c/users/chm/k8s-playground/02-wordpress/wp-storage #path:  /mnt/c/Users/chm/k8s-playground/02-wordpress/storage-db/storage-wp
   claimRef:
     namespace: default
     name: wp-pv-claim
@@ -65,7 +66,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: wordpress:6.2.1-apache
+      - image: wordpress:6.7-apache
         name: wordpress
         env:
         - name: WORDPRESS_DB_HOST
@@ -85,7 +86,7 @@ spec:
             port: 80
         volumeMounts:
         - name: wordpress-persistent-storage
-          mountPath: /var/www/html
+          mountPath: /var/www/html/wp-content/uploads
         resources:
           requests:
             memory: "64Mi"
