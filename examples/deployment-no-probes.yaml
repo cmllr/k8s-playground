@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-example-no-probe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-example-no-probe
+  template:
+    metadata:
+      labels:
+        app: deployment-example-no-probe
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        command: ["bash"]
+        args: ["-c", "sleep 250000 && nginx -g daemon off;"]
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

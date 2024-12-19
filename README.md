@@ -8,8 +8,13 @@
 |kubectl delete deployment harald-schmidt|Löscht das Deployment „harald-schmidt“
 |kubectl get xy –o yaml|Liefert die YAML-Definition für xy
 
+# VS Code Plugin 
+
+https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools
 
 
 # Kubectl 
 
 https://kubernetes.io/releases/download/#binaries
+
+Linux/ Unix:  `chmod +x ./kubectl`
