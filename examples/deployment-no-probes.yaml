@@ -16,7 +16,7 @@ spec:
       - name: nginx
         image: nginx
         command: ["bash"]
-        args: ["-c", "sleep 250000 && nginx -g daemon off;"]
+        args: ["-c", "echo 'Sleeping 250000s' && sleep 250000 && nginx -g daemon off;"]
         ports:
         - containerPort: 80
         resources:
