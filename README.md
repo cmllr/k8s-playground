@@ -6,7 +6,8 @@
 |kubectl create –f xy.yaml|Erzeugt die Objekte, die in xy.yaml definiert
 |kubectl delete –f xy.xaml|Löscht alle Objekte, die in xy.yaml definiert sind
 |kubectl delete deployment harald-schmidt|Löscht das Deployment „harald-schmidt“
-|kubectl get xy –o yaml|Liefert die YAML-Definition für xy
+|kubectl get xy –o yaml|Liefert die YAML-Definition für xy|
+|kubectl rollout restart deployment <name>| Startet Deployment <name> neu|
 
 # VS Code Plugin 
 
